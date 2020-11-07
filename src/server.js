@@ -15,6 +15,8 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-app.listen(3334, () =>
-  console.log('Server running on port 3334...')
+const port = process.env.PORT || 3334
+
+app.listen(port, () =>
+  console.log(`Server running on port ${port}...`)
 )
