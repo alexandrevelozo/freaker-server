@@ -15,7 +15,14 @@ class OrderController {
           {
             model: Product,
             as: 'products',
-            through: { atributes: [] }
+            through: { atributes: [
+              'id',
+              'name',
+              'images',
+              'cost_price',
+              'sale_price',
+              'stock'
+            ] }
           }
         ]
       })
