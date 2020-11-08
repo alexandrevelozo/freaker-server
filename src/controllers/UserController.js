@@ -63,9 +63,7 @@ class UserController {
     const { id } = request.params
 
     try {
-      const user = await User.findByPk(id, {
-        include: { association: 'orders' }
-      })
+      const user = await User.findByPk(id)
 
       if (!user) {
         return response.status(400).json({ error: 'The user does not exist.' })

@@ -29,6 +29,12 @@ class OrderController {
   async store (request, response) {
     try {
       const { products, user_id } = request.body
+
+      if (!products)
+        return response
+          .status(400)
+          .json({ error: 'You cannot create an order without products.' })
+
       const order = await Order.create({ user_id })
 
       if (products && products.length > 0) {
