@@ -10,11 +10,10 @@ class OrderController {
         include: [
           {
             model: User,
-            as: 'user'
+            as: 'users'
           },
-          {
-            model: Product,
-            as: 'products',
+        ],
+        Product,
             // through: { atributes: [
             //   'id',
             //   'name',
@@ -23,9 +22,8 @@ class OrderController {
             //   'sale_price',
             //   'stock'
             // ] }
-          }
-        ]
-      })
+        }
+      )
 
       return response.status(200).json(orders)
     } catch (error) {

@@ -15,10 +15,9 @@ class Order extends Model {
 
   static associate (models) {
     this.belongsTo(models.User, { foreignKey: 'user_id', as: 'users' })
-    this.belongsToMany(models.Product, {
-      through: 'order_items',
-      as: 'products',
-      foreignKey: 'product_id'
+    this.hasMany(models.Product, {
+      foreignKey: 'product_id',
+      as: 'products'
 
       // through: 'order_items',
       // as: 'products',
