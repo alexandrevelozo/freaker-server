@@ -12,18 +12,13 @@ class OrderController {
             model: User,
             as: 'users'
           },
-        ],
-        Product,
-            // through: { atributes: [
-            //   'id',
-            //   'name',
-            //   'images',
-            //   'cost_price',
-            //   'sale_price',
-            //   'stock'
-            // ] }
-        }
-      )
+          {
+            model: Product,
+            as: 'products',
+            through: { atributes: [] }
+          }
+        ]
+      })
 
       return response.status(200).json(orders)
     } catch (error) {
