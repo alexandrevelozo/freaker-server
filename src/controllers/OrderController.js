@@ -10,7 +10,7 @@ class OrderController {
         include: [
           {
             model: User,
-            as: 'users'
+            as: 'user'
           },
           {
             model: Product,
